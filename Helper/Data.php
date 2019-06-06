@@ -1,6 +1,6 @@
 <?php
 
-namespace Filejet\Filejet\Helper;
+namespace Filejet\FilejetMagento2Plugin\Helper;
 
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Store\Model\ScopeInterface;
@@ -19,7 +19,6 @@ class Data extends AbstractHelper
 
 	public function getGeneralConfig($code, $storeId = null)
 	{
-
 		return $this->getConfigValue(self::XML_PATH_FILEJET .'general/'. $code, $storeId);
 	}
 

@@ -1,15 +1,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
 
-    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
-        <arguments>
-            <argument name="collections" xsi:type="array">
-                <item name="Filejet_Filejet_post_listing_data_source" xsi:type="string">Filejet\Filejet\Model\ResourceModel\Post\Grid\Collection</item>
-            </argument>
-        </arguments>
-    </type>
-
     <type name="Magento\Framework\View\Element\AbstractBlock">
-        <plugin name="Filejet_Filejet_Renderer" type="Filejet\Filejet\Plugin\RendererPlugin" />
+        <plugin name="Filejet_FilejetMagento2Plugin_Renderer" type="Filejet\FilejetMagento2Plugin\Plugin\RendererPlugin" />
     </type>
 
 </config>

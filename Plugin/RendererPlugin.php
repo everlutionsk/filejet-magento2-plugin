@@ -1,13 +1,13 @@
 <?php
 
-namespace Filejet\Filejet\Plugin;
+namespace Filejet\FilejetMagento2Plugin\Plugin;
 
 
 use FileJet\External\ReplaceHtml;
 use Magento\Framework\App\State;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\View\Element\AbstractBlock;
-use Filejet\Filejet\Helper\Data;
+use Filejet\FilejetMagento2Plugin\Helper\Data;
 
 /**
  * Class RendererPlugin
@@ -33,11 +33,16 @@ class RendererPlugin
     }
 
     public function afterToHtml(AbstractBlock $block, $output){
+
         try {
             if ($this->state->getAreaCode() === 'adminhtml') {
                 return $output;
             }
         } catch (LocalizedException $e) {
+            return $output;
+        }
+
+        if(!$this->helperData->getGeneralConfig('enable')) {
             return $output;
         }
 

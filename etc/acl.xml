@@ -3,14 +3,14 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Filejet_Filejet::helloworld" title="Hello World" sortOrder="51">
-                    <resource id="Filejet_Filejet::post" title="Posts" sortOrder="10"/>
-                    <resource id="Filejet_Filejet::helloworld_configuration" title="Configuration" sortOrder="99" />
+                <resource id="Filejet_FilejetMagento2Plugin::filejet" title="FileJet" sortOrder="51">
+                    <resource id="Filejet_FilejetMagento2Plugin::dashboard" title="Dashboard" sortOrder="10"/>
+                    <resource id="Filejet_FilejetMagento2Plugin::filejet_configuration" title="Configuration" sortOrder="99" />
                 </resource>
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="Filejet_Filejet::helloworld_config" title="Hello World"/>
+                            <resource id="Filejet_FilejetMagento2Plugin::filejet_config" title="FileJet"/>
                         </resource>
                     </resource>
                 </resource>

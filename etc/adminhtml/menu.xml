@@ -1,8 +1,27 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Filejet_Filejet::helloworld" title="FileJet" module="Filejet_Filejet" sortOrder="51" resource="Filejet_Filejet::helloworld"/>
-        <add id="Filejet_Filejet::post" title="Dashboard" module="Filejet_Filejet" sortOrder="10" action="Filejet_Filejet/post" resource="Filejet_Filejet::post" parent="Filejet_Filejet::helloworld"/>
-        <add id="Filejet_Filejet::hello_configuration" title="Configuration" module="Filejet_Filejet" sortOrder="99" parent="Filejet_Filejet::helloworld" action="adminhtml/system_config/edit/section/helloworld" resource="Filejet_Filejet::helloworld_configuration"/>
+        <add id="Filejet_FilejetMagento2Plugin::filejet"
+             title="FileJet"
+             module="Filejet_FilejetMagento2Plugin"
+             sortOrder="51"
+             resource="Filejet_FilejetMagento2Plugin::filejet"/>
+
+        <add id="Filejet_FilejetMagento2Plugin::dashboard"
+             title="Dashboard"
+             module="Filejet_FilejetMagento2Plugin"
+             sortOrder="10"
+             action="filejet_magento2_plugin/dashboard"
+             resource="Filejet_FilejetMagento2Plugin::dashboard"
+             parent="Filejet_FilejetMagento2Plugin::filejet"/>
+
+        <add id="Filejet_FilejetMagento2Plugin::hello_configuration"
+             title="Configuration"
+             module="Filejet_FilejetMagento2Plugin"
+             sortOrder="99"
+             parent="Filejet_FilejetMagento2Plugin::filejet"
+             action="adminhtml/system_config/edit/section/filejet"
+             resource="Filejet_FilejetMagento2Plugin::filejet_configuration"/>
     </menu>
 </config>
