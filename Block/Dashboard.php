@@ -55,4 +55,11 @@ class Dashboard extends \Magento\Framework\View\Element\Template
 
         return $decoded;
     }
+
+    public function getImageUrl()
+    {
+        return $this->_urlBuilder->getBaseUrl(
+                ['_type' => \Magento\Framework\UrlInterface::URL_TYPE_MEDIA]
+            ) . 'catalog/product/test.png';
+    }
 }

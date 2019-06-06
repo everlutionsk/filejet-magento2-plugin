@@ -30,7 +30,6 @@ class Index extends \Magento\Backend\App\Action
     {
         $resultPage = $this->resultPageFactory->create();
         $resultPage->setActiveMenu('Filejet_FilejetMagento2Plugin::filejet');
-        $resultPage->getConfig()->getTitle()->prepend(__('Dashboard'));
 
         return $resultPage;
     }
