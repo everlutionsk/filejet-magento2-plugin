@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Filejet_Filejet::helloworld" title="FileJet" module="Filejet_Filejet" sortOrder="51" resource="Filejet_Filejet::helloworld"/>
+        <add id="Filejet_Filejet::post" title="Dashboard" module="Filejet_Filejet" sortOrder="10" action="Filejet_Filejet/post" resource="Filejet_Filejet::post" parent="Filejet_Filejet::helloworld"/>
+        <add id="Filejet_Filejet::hello_configuration" title="Configuration" module="Filejet_Filejet" sortOrder="99" parent="Filejet_Filejet::helloworld" action="adminhtml/system_config/edit/section/helloworld" resource="Filejet_Filejet::helloworld_configuration"/>
+    </menu>
+</config>
