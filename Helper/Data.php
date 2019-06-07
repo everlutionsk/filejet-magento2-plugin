@@ -22,4 +22,19 @@ class Data extends AbstractHelper
 		return $this->getConfigValue(self::XML_PATH_FILEJET .'general/'. $code, $storeId);
 	}
 
+	public function getMutationsConfig($storeId = null)
+	{
+		return $this->getConfigValue('filejet_mutations/general/mutations', $storeId);
+	}
+
+	public function getIgnoreListConfig($storeId = null)
+	{
+		return $this->getConfigValue('filejet_ignore_list/general/ignore_list', $storeId);
+	}
+
+	public function getImageAttributeConfig($storeId = null)
+	{
+		return $this->getConfigValue('filejet_image_attribute/general/image_attribute', $storeId);
+	}
+
 }

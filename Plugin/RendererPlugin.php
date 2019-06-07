@@ -46,12 +46,44 @@ class RendererPlugin
             return $output;
         }
 
+        $ignoreList = array_reduce(
+            json_decode($this->helperData->getIgnoreListConfig(), true),
+            function(array $acc, array $item) {
+                $acc[$item['className']] = $item['className'];
+                return $acc;
+                },
+            []
+        );
+
+        $mutations = array_reduce(
+            json_decode($this->helperData->getMutationsConfig(), true),
+            function(array $acc, array $item) {
+                $acc[$item['className']] = $item['mutation'];
+                return $acc;
+                },
+            []
+        );
+
+        $imageAttributes = array_reduce(
+            json_decode($this->helperData->getImageAttributeConfig(), true),
+            function(array $acc, array $item) {
+                $acc[$item['imageAttribute']] = $item['imageAttribute'];
+                return $acc;
+                },
+            []
+        );
+
         $replace = new ReplaceHtml(
             $this->helperData->getGeneralConfig('storage_id'),
             null,
             $this->helperData->getGeneralConfig('secret')
         );
 
-        return $replace->replaceImages($output);
+        return $replace->replaceImages(
+            $output,
+            $ignoreList,
+            $mutations,
+            $imageAttributes
+        );
     }
 }

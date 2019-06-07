@@ -26,7 +26,7 @@ $breakdown = $data['breakdown'];
         <li>
             <div class="stats-item">
                                 <img src="<?= $block->getViewFileUrl('Filejet_FilejetMagento2Plugin::images/total-requests.svg') ?>" alt="">
-                <span> <strong><?= $breakdown['bandwidth'] ?></strong>
+                <span> <strong><?= $block->formatBytes($breakdown['bandwidth']) ?></strong>
                                         Bandwidth
                                     </span>
             </div>

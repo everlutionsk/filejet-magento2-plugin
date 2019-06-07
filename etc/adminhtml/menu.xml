@@ -16,12 +16,36 @@
              resource="Filejet_FilejetMagento2Plugin::dashboard"
              parent="Filejet_FilejetMagento2Plugin::filejet"/>
 
-        <add id="Filejet_FilejetMagento2Plugin::hello_configuration"
+        <add id="Filejet_FilejetMagento2Plugin::filejet_configuration"
              title="Configuration"
              module="Filejet_FilejetMagento2Plugin"
              sortOrder="99"
              parent="Filejet_FilejetMagento2Plugin::filejet"
              action="adminhtml/system_config/edit/section/filejet"
              resource="Filejet_FilejetMagento2Plugin::filejet_configuration"/>
+
+        <add id="Filejet_FilejetMagento2Plugin::filejet_mutations"
+             title="Mutations"
+             module="Filejet_FilejetMagento2Plugin"
+             sortOrder="99"
+             parent="Filejet_FilejetMagento2Plugin::filejet"
+             action="adminhtml/system_config/edit/section/filejet_mutations"
+             resource="Filejet_FilejetMagento2Plugin::filejet_mutations"/>
+
+        <add id="Filejet_FilejetMagento2Plugin::filejet_ignore_list"
+             title="Ignore list"
+             module="Filejet_FilejetMagento2Plugin"
+             sortOrder="99"
+             parent="Filejet_FilejetMagento2Plugin::filejet"
+             action="adminhtml/system_config/edit/section/filejet_ingore_list"
+             resource="Filejet_FilejetMagento2Plugin::filejet_ignore_list"/>
+
+        <add id="Filejet_FilejetMagento2Plugin::filejet_image_attribute"
+             title="Image attribute"
+             module="Filejet_FilejetMagento2Plugin"
+             sortOrder="99"
+             parent="Filejet_FilejetMagento2Plugin::filejet"
+             action="adminhtml/system_config/edit/section/filejet_image_attribute"
+             resource="Filejet_FilejetMagento2Plugin::filejet_image_attribute"/>
     </menu>
 </config>

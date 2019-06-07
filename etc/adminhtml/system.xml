@@ -26,5 +26,45 @@
                 </field>
             </group>
         </section>
+        <section id="filejet_mutations" translate="label" sortOrder="131" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Mutations</label>
+            <tab>filejet</tab>
+            <resource>Filejet_FilejetMagento2Plugin::filejet_mutations</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="mutations" translate="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Mutations</label>
+                    <frontend_model>Filejet\FilejetMagento2Plugin\Block\Adminhtml\Form\Field\Mutations</frontend_model>
+                    <backend_model>Filejet\FilejetMagento2Plugin\Model\Config\Serializer</backend_model>
+                </field>
+            </group>
+        </section>
+        <section id="filejet_ignore_list" translate="label" sortOrder="132" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Ignore list</label>
+            <tab>filejet</tab>
+            <resource>Filejet_FilejetMagento2Plugin::filejet_ignore_list</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="ignore_list" translate="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Ingore list</label>
+                    <frontend_model>Filejet\FilejetMagento2Plugin\Block\Adminhtml\Form\Field\IgnoreList</frontend_model>
+                    <backend_model>Filejet\FilejetMagento2Plugin\Model\Config\Serializer</backend_model>
+                </field>
+            </group>
+        </section>
+        <section id="filejet_image_attribute" translate="label" sortOrder="132" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Image Attribute</label>
+            <tab>filejet</tab>
+            <resource>Filejet_FilejetMagento2Plugin::filejet_image_attribute</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="image_attribute" translate="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Image Attribute</label>
+                    <comment>here</comment>
+                    <frontend_model>Filejet\FilejetMagento2Plugin\Block\Adminhtml\Form\Field\ImageAttribute</frontend_model>
+                    <backend_model>Filejet\FilejetMagento2Plugin\Model\Config\Serializer</backend_model>
+                </field>
+            </group>
+        </section>
     </system>
 </config>
