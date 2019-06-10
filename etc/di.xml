@@ -1,7 +1,0 @@
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
-
-    <type name="Magento\Framework\View\Element\AbstractBlock">
-        <plugin name="Filejet_FilejetMagento2Plugin_Renderer" type="Filejet\FilejetMagento2Plugin\Plugin\RendererPlugin" />
-    </type>
-
-</config>

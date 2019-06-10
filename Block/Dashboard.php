@@ -60,13 +60,6 @@ class Dashboard extends \Magento\Framework\View\Element\Template
         return $decoded;
     }
 
-    public function getImageUrl()
-    {
-        return $this->_urlBuilder->getBaseUrl(
-                ['_type' => \Magento\Framework\UrlInterface::URL_TYPE_MEDIA]
-            ) . 'catalog/product/test.png';
-    }
-
     public function formatBytes($bytes, $decimals = 2)
     {
         $size = array('B','kB','MB','GB','TB','PB','EB','ZB','YB');
