@@ -13,7 +13,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "Filejet\\Filejet\\": ""
+            "Filejet\\FilejetMagento2Plugin\\": ""
         }
     }
 
