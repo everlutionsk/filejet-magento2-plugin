@@ -5,7 +5,7 @@
             Dashboard
         </title>
         <css src="Filejet_FilejetMagento2Plugin::css/filejet.css" />
-        <script src="requirejs/require.js"/>
+        <link src="requirejs/require.js"/>
     </head>
     <body>
         <referenceContainer name="content">

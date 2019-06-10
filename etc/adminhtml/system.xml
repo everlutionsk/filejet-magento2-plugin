@@ -34,6 +34,7 @@
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
                 <field id="mutations" translate="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Mutations</label>
+                    <comment>Enter the class of your image and the manual mutation you want FileJet to use. (by default, FileJet will try to guess the mutation). For more info on the mutations available, see the api reference</comment>
                     <frontend_model>Filejet\FilejetMagento2Plugin\Block\Adminhtml\Form\Field\Mutations</frontend_model>
                     <backend_model>Filejet\FilejetMagento2Plugin\Model\Config\Serializer</backend_model>
                 </field>
@@ -47,6 +48,7 @@
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
                 <field id="ignore_list" translate="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Ingore list</label>
+                    <comment>Add classes of the images that you wish not to be handled by FileJet.</comment>
                     <frontend_model>Filejet\FilejetMagento2Plugin\Block\Adminhtml\Form\Field\IgnoreList</frontend_model>
                     <backend_model>Filejet\FilejetMagento2Plugin\Model\Config\Serializer</backend_model>
                 </field>
@@ -60,7 +62,7 @@
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
                 <field id="image_attribute" translate="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Image Attribute</label>
-                    <comment>here</comment>
+                    <comment>Add attributes of the images that you wish to be handled by FileJet. By default FileJet handles src and srcset attributes.</comment>
                     <frontend_model>Filejet\FilejetMagento2Plugin\Block\Adminhtml\Form\Field\ImageAttribute</frontend_model>
                     <backend_model>Filejet\FilejetMagento2Plugin\Model\Config\Serializer</backend_model>
                 </field>

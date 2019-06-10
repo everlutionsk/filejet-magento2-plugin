@@ -47,7 +47,7 @@ class RendererPlugin
         }
 
         $ignoreList = array_reduce(
-            json_decode($this->helperData->getIgnoreListConfig(), true),
+            null !== $this->helperData->getIgnoreListConfig() ? json_decode($this->helperData->getIgnoreListConfig(), true) : [],
             function(array $acc, array $item) {
                 $acc[$item['className']] = $item['className'];
                 return $acc;
@@ -56,7 +56,7 @@ class RendererPlugin
         );
 
         $mutations = array_reduce(
-            json_decode($this->helperData->getMutationsConfig(), true),
+            null !== $this->helperData->getMutationsConfig() ? json_decode($this->helperData->getMutationsConfig(), true) : [],
             function(array $acc, array $item) {
                 $acc[$item['className']] = $item['mutation'];
                 return $acc;
@@ -65,7 +65,7 @@ class RendererPlugin
         );
 
         $imageAttributes = array_reduce(
-            json_decode($this->helperData->getImageAttributeConfig(), true),
+            null !== $this->helperData->getImageAttributeConfig() ? json_decode($this->helperData->getImageAttributeConfig(), true) : [],
             function(array $acc, array $item) {
                 $acc[$item['imageAttribute']] = $item['imageAttribute'];
                 return $acc;

@@ -44,80 +44,17 @@ $breakdown = $data['breakdown'];
 </div>
 <?php
 
-//$graphData = $data['graphData'];
-$graphData = false;
+$graphData = $data['graphData'];
 if ($graphData):
     $labels = array_column($graphData['masterImageAccessed'], 'day');
     $masterImageAccessed = array_column($graphData['masterImageAccessed'], 'value');
     $mutationAccessed = array_column($graphData['mutationAccessed'], 'value');
     ?>
-    <div class="stats-chart">
+    <div class="stats-chart" data-mage-init='{"filejet_dashboard": {"labels": "<?= implode(',', $labels) ?>", "masterImageAccessed" : "<?= implode(',', $masterImageAccessed) ?>", "mutationAccessed" : "<?= implode(',', $mutationAccessed) ?>"}}'>
         <canvas id="stats" width="400" height="200"></canvas>
-        <script type="text/javascript">
-            window.addEventListener('DOMContentLoaded', () => {
-                function transparentize(color, opacity) {
-                    var alpha = opacity === undefined ? 0.5 : 1 - opacity;
-                    return Color(color).alpha(alpha).rgbString();
-                }
-
-                var myChart = new Chart('stats', {
-                    type: 'line',
-                    data: {
-                        labels: [<?= implode(',', $labels) ?>],
-                        datasets: [
-                            {
-                                label: 'Master image accessed',
-                                legend: 'bottom',
-                                data: [<?= implode(',', $masterImageAccessed) ?>],
-                                backgroundColor: transparentize('#8854d0'),
-                                borderColor: '#8854d0',
-                                pointBackgroundColor: '#8854d0'
-                            },
-                            {
-                                label: 'Mutated image accessed',
-                                legend: 'bottom',
-                                data: [<?= implode(',', $mutationAccessed) ?>],
-                                backgroundColor: transparentize('#20bf6b'),
-                                borderColor: '#20bf6b',
-                                pointBackgroundColor: '#20bf6b'
-                            }
-                        ]
-                    },
-                    options: {
-                        responsive: true,
-                        tooltips: {
-                            mode: 'index',
-                            callbacks: {
-                                title: function () {
-                                    return '';
-                                }
-                            }
-                        },
-                        hover: {
-                            mode: 'index'
-                        },
-                        legend: {
-                            display: true,
-                            position: 'bottom'
-                        },
-                        scales: {
-                            xAxes: [{
-                                gridLines: {
-                                    display: false
-                                }
-                            }],
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true,
-                                }
-                            }]
-                        }
-                    }
-                });
-            });
-        </script>
         <p class="info"><i>* statistics are re-calculated every hour</i></p>
     </div>
 <?php
 endif;
 ?>
+
