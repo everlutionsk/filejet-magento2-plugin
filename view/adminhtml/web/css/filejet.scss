@@ -502,7 +502,7 @@ input.filejet-danger {
 }
 
 .arrows {
-  padding: 16px 0 0;
+  margin-left: 20px;
   a {
     display: inline-block;
     border-radius: 4px;
@@ -513,9 +513,26 @@ input.filejet-danger {
     height: 28px;
     color: rgba(0, 0, 0, 0.65);
     transition: all ease 250ms;
+    min-width: 32px;
+    text-align: center;
     span {
       display: inline-block;
       padding: 4px 0;
+      font-size: 18px;
+      &.dashicons-arrow-left-alt2{
+        &:after {
+          content: '\003C';
+          position: relative;
+          top: -3px;
+        }
+      }
+      &.dashicons-arrow-right-alt2{
+        &:before {
+          content: '\003E';
+          position: relative;
+          top: -3px;
+        }
+      }
     }
     &:focus{
       box-shadow: none!important;
@@ -523,6 +540,7 @@ input.filejet-danger {
     &:hover{
       border: 1px solid #d9d9d9;
       transition: all ease 250ms;
+      background: #fff;
     }
   }
 }
