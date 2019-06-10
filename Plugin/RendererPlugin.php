@@ -76,7 +76,7 @@ class RendererPlugin
         $replace = new ReplaceHtml(
             $this->helperData->getGeneralConfig('storage_id'),
             null,
-            $this->helperData->getGeneralConfig('secret')
+            $this->helperData->getGeneralConfig('secret_key')
         );
 
         return $replace->replaceImages(

@@ -1,13 +1,35 @@
 <?php
-$data = $block->getStatisticsData();
+$year = $block->getYear();
+$month = $block->getMonth();
+$data = $block->getStatisticsData($block->getYear(), $block->getMonth());
 $breakdown = $data['breakdown'];
 
+$currentPeriod = \DateTime::createFromFormat('Y-n', "{$year}-{$month}");
+$previousPeriod = clone $currentPeriod;
+$nextPeriod = clone $currentPeriod;
+$previousPeriod->modify('-1 month');
+$nextPeriod->modify('+1 month');
+$disableNextPeriod = (new \DateTime())->format('Yn') === $currentPeriod->format('Yn');
+
 ?>
+<div class="row">
+    <h2>Stats > <?= $currentPeriod->format('F Y') ?></h2>
+    <div class="arrows">
+        <a href="<?= $block->getUrl('*/*/*', ['_current' => true, '_use_rewrite' => true, 'year' => $previousPeriod->format('Y'), 'month' => $previousPeriod->format('n')]) ?>"><span
+                    class="dashicons dashicons-arrow-left-alt2"></span></a>
+        <?php if (false === $disableNextPeriod): ?>
+            <a href="<?= $block->getUrl('*/*/*', ['_current' => true, '_use_rewrite' => true, 'year' => $nextPeriod->format('Y'), 'month' => $nextPeriod->format('n')]) ?>"><span
+                        class="dashicons dashicons-arrow-right-alt2"></span></a>
+        <?php endif; ?>
+    </div>
+</div>
+
 <div class="stats-wrapper">
     <ul class="stats-list row">
         <li>
             <div class="stats-item">
-                <img src="<?= $block->getViewFileUrl('Filejet_FilejetMagento2Plugin::images/master-images.svg') ?>" alt="">
+                <img src="<?= $block->getViewFileUrl('Filejet_FilejetMagento2Plugin::images/master-images.svg') ?>"
+                     alt="">
                 <span>
                                     <strong><?= $breakdown['masterImageAccessed'] ?></strong>
                                     Master accessed
@@ -16,7 +38,8 @@ $breakdown = $data['breakdown'];
         </li>
         <li>
             <div class="stats-item">
-                                <img src="<?= $block->getViewFileUrl('Filejet_FilejetMagento2Plugin::images/renders.svg') ?>" alt="">
+                <img src="<?= $block->getViewFileUrl('Filejet_FilejetMagento2Plugin::images/renders.svg') ?>"
+                     alt="">
                 <span>
                                         <strong><?= $breakdown['mutationAccessed'] ?></strong>
                                         Mutations
@@ -25,7 +48,8 @@ $breakdown = $data['breakdown'];
         </li>
         <li>
             <div class="stats-item">
-                                <img src="<?= $block->getViewFileUrl('Filejet_FilejetMagento2Plugin::images/total-requests.svg') ?>" alt="">
+                <img src="<?= $block->getViewFileUrl('Filejet_FilejetMagento2Plugin::images/total-requests.svg') ?>"
+                     alt="">
                 <span> <strong><?= $block->formatBytes($breakdown['bandwidth']) ?></strong>
                                         Bandwidth
                                     </span>
@@ -33,7 +57,8 @@ $breakdown = $data['breakdown'];
         </li>
         <li>
             <div class="stats-item">
-                                <img src="<?= $block->getViewFileUrl('Filejet_FilejetMagento2Plugin::images/avg-response.svg') ?>" alt="">
+                <img src="<?= $block->getViewFileUrl('Filejet_FilejetMagento2Plugin::images/avg-response.svg') ?>"
+                     alt="">
                 <span>
                                         <strong><?= round($breakdown['averageResponseTime']) ?>ms</strong>
                                         Avg. response (ms)
@@ -50,7 +75,8 @@ if ($graphData):
     $masterImageAccessed = array_column($graphData['masterImageAccessed'], 'value');
     $mutationAccessed = array_column($graphData['mutationAccessed'], 'value');
     ?>
-    <div class="stats-chart" data-mage-init='{"filejet_dashboard": {"labels": "<?= implode(',', $labels) ?>", "masterImageAccessed" : "<?= implode(',', $masterImageAccessed) ?>", "mutationAccessed" : "<?= implode(',', $mutationAccessed) ?>"}}'>
+    <div class="stats-chart"
+         data-mage-init='{"filejet_dashboard": {"labels": "<?= implode(',', $labels) ?>", "masterImageAccessed" : "<?= implode(',', $masterImageAccessed) ?>", "mutationAccessed" : "<?= implode(',', $mutationAccessed) ?>"}}'>
         <canvas id="stats" width="400" height="200"></canvas>
         <p class="info"><i>* statistics are re-calculated every hour</i></p>
     </div>

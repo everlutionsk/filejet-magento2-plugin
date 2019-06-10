@@ -14,14 +14,18 @@ class Dashboard extends \Magento\Framework\View\Element\Template
 {
     /** @var Data */
     private $helperData;
+    /** @var \Magento\Framework\App\Request\Http */
+    private $request;
 
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
-        Data $helperData
+        Data $helperData,
+        \Magento\Framework\App\Request\Http $request
     )
     {
         parent::__construct($context);
         $this->helperData = $helperData;
+        $this->request = $request;
     }
 
     public function getStatisticsData($year = null, $month = null)
@@ -68,5 +72,15 @@ class Dashboard extends \Magento\Framework\View\Element\Template
         $size = array('B','kB','MB','GB','TB','PB','EB','ZB','YB');
         $factor = floor((strlen($bytes) - 1) / 3);
         return sprintf("%.{$decimals}f", $bytes / pow(1024, $factor)) . ' ' . @$size[$factor];
+    }
+
+    public function getYear()
+    {
+        return $this->request->getParam('year', (new \DateTime())->format('Y'));
+    }
+
+    public function getMonth()
+    {
+        return $this->request->getParam('month', (new \DateTime())->format('n'));
     }
 }
