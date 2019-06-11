@@ -1,2 +1,4 @@
 .idea
 vendor
+view/adminhtml/web/css/.sass-cache
+view/adminhtml/web/css/filejet.css.map

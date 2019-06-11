@@ -733,20 +733,3 @@ p.info {
 .footer-legal {
   width: 100%;
 }
-
-#menu-filejet-filejetmagento2plugin-filejet {
-  a {
-    position: relative;
-    &:before {
-      content:'';
-      background-image: url(../images/filejet-32x32.png);
-      position: relative;
-      width: 30px;
-      height: 30px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 0;
-      top: -4px;
-    }
-  }
-}

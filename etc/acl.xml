@@ -4,8 +4,11 @@
         <resources>
             <resource id="Magento_Backend::admin">
                 <resource id="Filejet_FilejetMagento2Plugin::filejet" title="FileJet" sortOrder="51">
-                    <resource id="Filejet_FilejetMagento2Plugin::dashboard" title="Dashboard" sortOrder="10"/>
+                    <resource id="Filejet_FilejetMagento2Plugin::filejet_dashboard" title="Dashboard" sortOrder="10"/>
                     <resource id="Filejet_FilejetMagento2Plugin::filejet_configuration" title="Configuration" sortOrder="99" />
+                    <resource id="Filejet_FilejetMagento2Plugin::filejet_mutations" title="Configuration" sortOrder="99" />
+                    <resource id="Filejet_FilejetMagento2Plugin::filejet_ignore_list" title="Configuration" sortOrder="99" />
+                    <resource id="Filejet_FilejetMagento2Plugin::filejet_image_attribute" title="Configuration" sortOrder="99" />
                 </resource>
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">

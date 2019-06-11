@@ -46,7 +46,7 @@ class Renderer implements \Magento\Framework\Event\ObserverInterface
         $output = $response->getBody();
         $replace = new ReplaceHtml(
             $this->helperData->getGeneralConfig('storage_id'),
-            null,
+            'https://magento2.localtunnel.me',
             $this->helperData->getGeneralConfig('secret_key')
         );
 

@@ -8,7 +8,7 @@
              sortOrder="51"
              resource="Filejet_FilejetMagento2Plugin::filejet"/>
 
-        <add id="Filejet_FilejetMagento2Plugin::dashboard"
+        <add id="Filejet_FilejetMagento2Plugin::filejet_dashboard"
              title="Dashboard"
              module="Filejet_FilejetMagento2Plugin"
              sortOrder="10"

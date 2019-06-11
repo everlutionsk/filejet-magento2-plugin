@@ -1,0 +1,12 @@
+@filejetfilejetmagento2plugin-icons-admin__font-name-path: '@{baseDir}Filejet_FilejetMagento2Plugin/fonts/filejet';
+@filejetfilejetmagento2plugin-icons-admin__font-name : 'FilejetMagento2Plugin';
+.lib-font-face(
+  @family-name:@filejetfilejetmagento2plugin-icons-admin__font-name,
+  @font-path: @filejetfilejetmagento2plugin-icons-admin__font-name-path,
+  @font-weight: normal,
+  @font-style: normal
+);
+.admin__menu .item-filejet.parent.level-0 > a:before {
+  font-family: @filejetfilejetmagento2plugin-icons-admin__font-name;
+  content: "\e900";
+}
