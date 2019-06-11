@@ -76,4 +76,9 @@ class Dashboard extends \Magento\Framework\View\Element\Template
     {
         return $this->request->getParam('month', (new \DateTime())->format('n'));
     }
+
+    public function isConfigured()
+    {
+        return $this->helperData->getGeneralConfig('storage_id') && $this->helperData->getGeneralConfig('api_key') && $this->helperData->getGeneralConfig('secret_key');
+    }
 }

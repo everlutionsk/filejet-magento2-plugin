@@ -1,4 +1,5 @@
 <?php
+if($block->isConfigured()):
 $year = $block->getYear();
 $month = $block->getMonth();
 $data = $block->getStatisticsData($block->getYear(), $block->getMonth());
@@ -82,5 +83,10 @@ if ($graphData):
     </div>
 <?php
 endif;
+else:
 ?>
-
+    <strong>You have made a wise decision</strong> - configure FileJet to speed up your site now!
+<a href="<?= $block->getUrl('adminhtml/system_config/edit/section/filejet') ?>">Set up your FileJet account</a>
+<?php
+endif;
+    ?>
