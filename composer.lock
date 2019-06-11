@@ -1,0 +1,54 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "818389608f6f732e92af02ef39e2aba8",
+    "packages": [
+        {
+            "name": "filejet/filejet-external-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/filejet/filejet-external-php.git",
+                "reference": "a6cde1c8244ec2fe55dc6f66a55f563af9d07fe6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/filejet/filejet-external-php/zipball/a6cde1c8244ec2fe55dc6f66a55f563af9d07fe6",
+                "reference": "a6cde1c8244ec2fe55dc6f66a55f563af9d07fe6",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-libxml": "*",
+                "php": "^5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FileJet\\External\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Library containing functions for manipulating external files of FileJet",
+            "time": "2019-06-05T15:23:26+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "filejet/filejet-external-php": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^5.6"
+    },
+    "platform-dev": []
+}
