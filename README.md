@@ -10,5 +10,5 @@ We welcome your feedback and we accept pull-requests.
 docker build -t filejet-magento2-plugin - < Dockerfile
 
 # install vendors
-docker run -it --rm -v "$PWD":/wordpress -w /wordpress filejet-wordpress-plugin composer install --no-dev --no-autoloader
+docker run -it --rm -v "$PWD":/magento -w /magento filejet-wordpress-plugin composer install --no-dev --no-autoloader
 ```
