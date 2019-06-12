@@ -2,11 +2,10 @@
     "name": "filejet/filejet-magento2-plugin",
     "description": "FileJet integration for Magento2",
     "type": "magento2-module",
-    "version": "1.0.0",
     "license": "MIT",
     "require": {
         "php": "^5.6",
-        "filejet/filejet-external-php": "dev-master"
+        "filejet/filejet-external-php": "^1.0.0"
     },
     "autoload": {
         "files": [
@@ -16,5 +15,5 @@
             "Filejet\\FilejetMagento2Plugin\\": ""
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
